@@ -2,7 +2,7 @@
 Programmer:Charles Sherwood
 Date:2/25
 Requirements:This program should calculate the interest earned on a 
-bank account after one year
+bank account after one year.
 */
 
 #include <iomanip>
@@ -43,6 +43,8 @@ int main()
 	double IntP = interest * 100;
 	double Intr = principal * pow(1 + interest / Comp, Comp) - principal;
 
+
+	//Display everythin to the user
 	cout << "Interest Rate:\t\t" << IntP << "%" << endl;
 	cout << "Times Compounded:\t" << Comp<<endl;
 	cout <<fixed<<setprecision(2)<< "Principal:\t\t$" << principal<<endl;
