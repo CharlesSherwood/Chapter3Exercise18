@@ -7,9 +7,11 @@ bank account after one year
 
 #include <iomanip>
 #include <iostream>
+#include <cmath>
+#include <string>
 using namespace std;
 
-
+//create variables and ask for the users input
 double Principal()
 {
 	double principal;
@@ -31,16 +33,21 @@ double Compound()
 	cin >> Comp;
 	return Comp;
 }
+//retrun them to the main module, and calculate the interest earned.
 int main()
 {
 	double principal = Principal();
 	double interest = Interest();
 	double Comp = Compound();
-	double IntEarned = principal * (1 + interest / Comp);
+	double IntEarned = principal * pow(1 + interest / Comp, Comp);
+	double IntP = interest * 100;
+	double Intr = principal * pow(1 + interest / Comp, Comp) - principal;
 
-
-
-
+	cout << "Interest Rate:\t\t" << IntP << "%" << endl;
+	cout << "Times Compounded:\t" << Comp<<endl;
+	cout <<fixed<<setprecision(2)<< "Principal:\t\t$" << principal<<endl;
+	cout << fixed << setprecision(2) << "Interest:\t\t$" << Intr << endl;
+	cout << fixed << setprecision(2) << "Amount in savings:\t$" << IntEarned<<endl;
 
 
 }
